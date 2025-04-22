@@ -15,7 +15,7 @@ const blogPosts = {
     date: "May 15, 2023",
     readTime: "8 min read",
     author: "Aditya Ghildiyal",
-    image: "/placeholder.svg?height=400&width=800",
+    image: "/heap.png?height=400&width=800",
     tags: ["DSA", "Heap", "Priority Queue", "Algorithms"],
     next: "tim-sort-algorithm",
     prev: "hamilton-path-algorithm",
@@ -150,7 +150,7 @@ class MinHeap {
     date: "April 3, 2023",
     readTime: "6 min read",
     author: "Aditya Ghildiyal",
-    image: "/placeholder.svg?height=400&width=800",
+    image: "/TimSort.png?height=400&width=800",
     tags: ["Algorithms", "Sorting", "Tim Sort", "Python"],
     next: "hamilton-path-algorithm",
     prev: "heap-data-structure",
@@ -281,7 +281,7 @@ def tim_sort(arr):
     date: "March 12, 2023",
     readTime: "7 min read",
     author: "Aditya Ghildiyal",
-    image: "/placeholder.svg?height=400&width=800",
+    image: "/HPA.png?height=400&width=800",
     tags: ["Graph Theory", "Hamilton Path", "NP-Complete", "Algorithms"],
     next: "heap-data-structure",
     prev: "tim-sort-algorithm",
@@ -634,7 +634,7 @@ export default function BlogPost() {
               <h3 className="text-xl font-bold mb-4 font-mono">About the Author</h3>
               <div className="flex items-start gap-4">
                 <div className="w-16 h-16 rounded-full overflow-hidden bg-slate-800">
-                  <img src="/placeholder.svg?height=64&width=64" alt="Author" className="w-full h-full object-cover" />
+                  <img src="/HeadShot.jpg?height=64&width=64" alt="Author" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-emerald-400">{post.author}</h4>
