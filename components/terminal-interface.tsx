@@ -21,8 +21,8 @@ export default function TerminalInterface() {
       input: "welcome",
       output: (
         <div>
-          <p className="text-emerald-400">Welcome to Aditya&apos;s Terminal!</p>
-          <p className="text-slate-300 mt-1">Type &apos;help&apos; to see available commands.</p>
+          <p className="text-emerald-400">Welcome to Aditya's Terminal!</p>
+          <p className="text-slate-300 mt-1">Type 'help' to see available commands.</p>
         </div>
       ),
     },
@@ -30,6 +30,7 @@ export default function TerminalInterface() {
   const [historyIndex, setHistoryIndex] = useState(-1)
   const inputRef = useRef<HTMLInputElement>(null)
   const terminalRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   const scrollToBottom = () => {
     if (terminalRef.current) {
@@ -40,6 +41,12 @@ export default function TerminalInterface() {
   useEffect(() => {
     scrollToBottom()
   }, [commandHistory])
+
+  useEffect(() => {
+    if (isOpen) {
+      focusInput()
+    }
+  }, [isOpen])
 
   const handleCommand = (cmd: string) => {
     const command = cmd.trim().toLowerCase()
@@ -80,8 +87,9 @@ export default function TerminalInterface() {
           <div className="space-y-1">
             <p className="text-emerald-400">About Aditya Ghildiyal:</p>
             <p>
-              Full Stack Developer with 5+ years of experience building web applications. Passionate about creating
-              elegant solutions to complex problems using modern technologies.
+              Full Stack Developer with extensive experience in building modern web applications. 
+              Expert in creating elegant solutions to complex problems using cutting-edge technologies.
+              Passionate about clean code, performance optimization, and user experience.
             </p>
           </div>
         )
@@ -91,15 +99,20 @@ export default function TerminalInterface() {
         result = (
           <div className="space-y-1">
             <p className="text-emerald-400">Technical Skills:</p>
-            <p>
-              <span className="text-yellow-400">Frontend:</span> React, Next.js, TypeScript, Tailwind CSS
-            </p>
-            <p>
-              <span className="text-yellow-400">Backend:</span> Node.js, Express, MongoDB, PostgreSQL
-            </p>
-            <p>
-              <span className="text-yellow-400">Other:</span> Git, Docker, AWS, CI/CD
-            </p>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">Frontend:</span>
+                <span>React, Next.js, TypeScript, Tailwind CSS, HTML/CSS</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">Backend:</span>
+                <span>Node.js, Express, MongoDB, PostgreSQL</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">Tools:</span>
+                <span>Git, Docker, CI/CD</span>
+              </div>
+            </div>
           </div>
         )
         break
@@ -107,21 +120,37 @@ export default function TerminalInterface() {
       case "projects":
         result = (
           <div className="space-y-1">
-            <p className="text-emerald-400">Notable Projects:</p>
-            <p>
-              <span className="text-yellow-400">E-Commerce Platform</span> - Full-stack online store with payment
-              integration
-            </p>
-            <p>
-              <span className="text-yellow-400">Task Management App</span> - Collaborative task tracking with real-time
-              updates
-            </p>
-            <p>
-              <span className="text-yellow-400">Weather Dashboard</span> - Interactive weather visualization app
-            </p>
-            <p>
-              <span className="text-yellow-400">Social Media Analytics</span> - Dashboard for tracking social metrics
-            </p>
+            <p className="text-emerald-400">Featured Projects:</p>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">Tournament Fixture Generator</span>
+                <span className="text-slate-400">- Next.js, TypeScript, Algorithms</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">ChatBot</span>
+                <span className="text-slate-400">- Next.js, OpenAI API, NLP</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">Minesweeper</span>
+                <span className="text-slate-400">- React, Game Development</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">ERP Cell</span>
+                <span className="text-slate-400">- Next.js, API Integration</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">PathFinding Website</span>
+                <span className="text-slate-400">- Next.js, Algorithms, Maps</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">MST-TSP Route Optimization</span>
+                <span className="text-slate-400">- Algorithms, Graph Theory</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">Voice Authentication Lock</span>
+                <span className="text-slate-400">- Machine Learning</span>
+              </div>
+            </div>
           </div>
         )
         break
@@ -130,18 +159,32 @@ export default function TerminalInterface() {
         result = (
           <div className="space-y-1">
             <p className="text-emerald-400">Contact Information:</p>
-            <p>
-              <span className="text-yellow-400">Email:</span> aditya.ghildiyal@example.com
-            </p>
-            <p>
-              <span className="text-yellow-400">GitHub:</span> github.com/adityaghildiyal
-            </p>
-            <p>
-              <span className="text-yellow-400">LinkedIn:</span> linkedin.com/in/adityaghildiyal
-            </p>
-            <p>
-              <span className="text-yellow-400">Twitter:</span> twitter.com/adityaghildiyal
-            </p>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">Email:</span>
+                <a href="mailto:aditya.ghildiyal@gmail.com" className="text-slate-300 hover:text-emerald-400">
+                  aditya.ghildiyal@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">GitHub:</span>
+                <a href="https://github.com/AdityaGhildiyal" className="text-slate-300 hover:text-emerald-400">
+                  github.com/AdityaGhildiyal
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">LinkedIn:</span>
+                <a href="https://linkedin.com/in/adityaghildiyal" className="text-slate-300 hover:text-emerald-400">
+                  linkedin.com/in/adityaghildiyal
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">Twitter:</span>
+                <a href="https://twitter.com/AdityaGhildiyal" className="text-slate-300 hover:text-emerald-400">
+                  twitter.com/AdityaGhildiyal
+                </a>
+              </div>
+            </div>
           </div>
         )
         break
@@ -149,19 +192,54 @@ export default function TerminalInterface() {
       case "experience":
         result = (
           <div className="space-y-1">
-            <p className="text-emerald-400">Work Experience:</p>
-            <p>
-              <span className="text-yellow-400">Senior Developer</span> - TechCorp (2021-Present)
-            </p>
-            <p className="pl-4 text-sm">Led development of enterprise applications using React and Node.js</p>
-            <p>
-              <span className="text-yellow-400">Full Stack Developer</span> - WebSolutions (2019-2021)
-            </p>
-            <p className="pl-4 text-sm">Built and maintained e-commerce platforms and CMS systems</p>
-            <p>
-              <span className="text-yellow-400">Junior Developer</span> - StartupX (2018-2019)
-            </p>
-            <p className="pl-4 text-sm">Developed frontend components and implemented responsive designs</p>
+            <p className="text-emerald-400">Professional Experience:</p>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">Freelance Web Developer</span>
+                <span className="text-slate-400">- Self-employed (2023 - Present)</span>
+              </div>
+              <div className="ml-4 text-sm text-slate-400">
+                Building modern web applications using React and NextJS. Handling full-stack development and deployment.
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">ML Intern</span>
+                <span className="text-slate-400">- WebSolution Ltd. (2023)</span>
+              </div>
+              <div className="ml-4 text-sm text-slate-400">
+                Worked on machine learning projects and implemented various ML algorithms for data analysis and prediction.
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">Frontend Developer</span>
+                <span className="text-slate-400">- Frontend Masters (2024)</span>
+              </div>
+              <div className="ml-4 text-sm text-slate-400">
+                Completed advanced certification in modern frontend development, covering React, TypeScript, and state management patterns.
+              </div>
+            </div>
+            <p className="text-emerald-400 mt-2">Education:</p>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">B.Tech in Computer Science and Engineering</span>
+                <span className="text-slate-400">- Graphic Era Hill University (2023 - Present)</span>
+              </div>
+              <div className="ml-4 text-sm text-slate-400">
+                Currently pursuing B.Tech in Computer Science and Engineering. Focusing on core CS fundamentals, data structures, algorithms, and modern web development technologies.
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">Higher Secondary Education</span>
+                <span className="text-slate-400">- Srinagar Garhwal (2020 - 2022)</span>
+              </div>
+              <div className="ml-4 text-sm text-slate-400">
+                Completed 11th and 12th standard with focus on science and mathematics.
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-yellow-400">Early Education</span>
+                <span className="text-slate-400">- Delhi & Bhopal (2008 - 2020)</span>
+              </div>
+              <div className="ml-4 text-sm text-slate-400">
+                Completed schooling up to 10th standard in various cities across India.
+              </div>
+            </div>
           </div>
         )
         break
@@ -180,7 +258,7 @@ export default function TerminalInterface() {
 
       default:
         result = (
-          <p className="text-red-400">Command not found: {command}. Type &apos;help&apos; to see available commands.</p>
+          <p className="text-red-400">Command not found: {command}. Type 'help' to see available commands.</p>
         )
     }
 
@@ -197,7 +275,11 @@ export default function TerminalInterface() {
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "ArrowUp") {
+    if (e.key === "Escape" && isOpen) {
+      e.preventDefault()
+      setIsOpen(false)
+      setIsMinimized(false)
+    } else if (e.key === "ArrowUp") {
       e.preventDefault()
       if (historyIndex < commandHistory.length - 1) {
         const newIndex = historyIndex + 1
@@ -227,8 +309,10 @@ export default function TerminalInterface() {
     <>
       <Button
         onClick={() => {
-          setIsOpen(true)
-          setIsMinimized(false)
+          if (!isOpen) {
+            setIsOpen(true)
+            setIsMinimized(false)
+          }
         }}
         className="fixed bottom-4 right-4 bg-slate-800 hover:bg-slate-700 z-50"
         size="icon"
@@ -247,7 +331,10 @@ export default function TerminalInterface() {
             }}
             exit={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-16 right-4 w-full max-w-md h-96 bg-slate-900 border border-slate-700 rounded-md shadow-xl overflow-hidden z-50"
+            className="fixed bottom-16 right-4 w-full max-w-md bg-slate-900 border border-slate-700 rounded-md shadow-xl overflow-hidden z-50"
+            style={{
+              height: isMinimized ? "2.5rem" : "calc(100vh - 6rem)",
+            }}
           >
             <div className="flex items-center justify-between bg-slate-800 px-4 py-2 border-b border-slate-700">
               <div className="flex items-center">
@@ -267,7 +354,10 @@ export default function TerminalInterface() {
                   variant="ghost"
                   size="icon"
                   className="h-6 w-6 text-slate-400 hover:text-red-400"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false)
+                    setIsMinimized(false)
+                  }}
                 >
                   <X className="h-3 w-3" />
                 </Button>
@@ -275,31 +365,35 @@ export default function TerminalInterface() {
             </div>
 
             {!isMinimized && (
-              <div
-                className="p-4 h-[calc(100%-2.5rem)] overflow-y-auto font-mono text-sm"
-                ref={terminalRef}
-                onClick={focusInput}
-              >
-                {commandHistory.map((cmd, index) => (
-                  <div key={index} className="mb-2">
-                    <div className="flex">
-                      <span className="text-emerald-400 mr-2">$</span>
-                      <span className="text-slate-200">{cmd.input}</span>
+              <div className="flex flex-col h-full">
+                <div
+                  className="flex-1 overflow-y-auto p-4 font-mono text-sm"
+                  ref={terminalRef}
+                  style={{
+                    maxHeight: "calc(100vh - 15rem)",
+                    minHeight: "10rem",
+                  }}
+                >
+                  {commandHistory.map((command, index) => (
+                    <div key={index} className="space-y-1">
+                      <div className="text-emerald-400">&gt; {command.input}</div>
+                      {command.output}
                     </div>
-                    <div className="mt-1 ml-4">{cmd.output}</div>
+                  ))}
+                </div>
+                <form onSubmit={handleSubmit} className="p-4">
+                  <div className="flex">
+                    <span className="text-emerald-400 mr-2">$</span>
+                    <input
+                      ref={inputRef}
+                      type="text"
+                      value={input}
+                      onChange={(e) => setInput(e.target.value)}
+                      onKeyDown={handleKeyDown}
+                      className="flex-1 bg-transparent outline-none text-slate-200 font-mono"
+                      autoFocus
+                    />
                   </div>
-                ))}
-                <form onSubmit={handleSubmit} className="flex mt-2">
-                  <span className="text-emerald-400 mr-2">$</span>
-                  <input
-                    ref={inputRef}
-                    type="text"
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={handleKeyDown}
-                    className="flex-1 bg-transparent outline-none text-slate-200 font-mono"
-                    autoFocus
-                  />
                 </form>
               </div>
             )}
