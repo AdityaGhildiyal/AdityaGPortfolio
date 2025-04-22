@@ -63,7 +63,7 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="text-xl font-mono text-emerald-400 relative"
         >
-          ag_dev
+          AdityaG
           <div className="absolute top-full left-0 mt-2 flex gap-4">
             <motion.a
               href="https://github.com/AdityaGhildiyal/"

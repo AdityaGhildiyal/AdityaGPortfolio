@@ -10,6 +10,18 @@ export default function CustomCursor() {
   const [hidden, setHidden] = useState(true)
 
   useEffect(() => {
+    const onMouseMove = (e: MouseEvent) => {
+      requestAnimationFrame(() => {
+        setPosition({ x: e.clientX, y: e.clientY })
+        setHidden(false) // Fix: Show the cursor if mouse is already in window
+      })
+    }
+
+    const onMouseEnter = () => setHidden(false)
+    const onMouseLeave = () => setHidden(true)
+    const onMouseDown = () => setClicked(true)
+    const onMouseUp = () => setClicked(false)
+
     const addEventListeners = () => {
       document.addEventListener("mousemove", onMouseMove)
       document.addEventListener("mouseenter", onMouseEnter)
@@ -26,29 +38,6 @@ export default function CustomCursor() {
       document.removeEventListener("mouseup", onMouseUp)
     }
 
-    const onMouseMove = (e: MouseEvent) => {
-      // Use requestAnimationFrame for smoother cursor movement
-      requestAnimationFrame(() => {
-        setPosition({ x: e.clientX, y: e.clientY })
-      })
-    }
-
-    const onMouseEnter = () => {
-      setHidden(false)
-    }
-
-    const onMouseLeave = () => {
-      setHidden(true)
-    }
-
-    const onMouseDown = () => {
-      setClicked(true)
-    }
-
-    const onMouseUp = () => {
-      setClicked(false)
-    }
-
     const handleLinkHoverEvents = () => {
       document.querySelectorAll("a, button, [role=button], input, textarea, select").forEach((el) => {
         el.addEventListener("mouseenter", () => setLinkHovered(true))
@@ -59,16 +48,19 @@ export default function CustomCursor() {
     addEventListeners()
     handleLinkHoverEvents()
 
-    return () => {
-      removeEventListeners()
-    }
+    // Initial position check
+    document.body.dispatchEvent(new MouseEvent("mousemove", {
+      clientX: window.innerWidth / 2,
+      clientY: window.innerHeight / 2
+    }))
+
+    return () => removeEventListeners()
   }, [])
 
-  // Cursor variants with dot followed by outline
   const cursorOutlineVariants = {
     default: {
-      x: position.x - 10, // Larger outline (20% bigger)
-      y: position.y - 10,
+      x: position.x - 12,
+      y: position.y - 12,
       opacity: hidden ? 0 : 0.6,
       scale: 1,
       transition: {
@@ -76,12 +68,11 @@ export default function CustomCursor() {
         mass: 0.3,
         stiffness: 800,
         damping: 30,
-        ease: "linear",
       },
     },
     clicked: {
-      x: position.x - 10,
-      y: position.y - 10,
+      x: position.x - 12,
+      y: position.y - 12,
       scale: 0.8,
       opacity: hidden ? 0 : 0.8,
       transition: {
@@ -92,10 +83,10 @@ export default function CustomCursor() {
       },
     },
     hovered: {
-      x: position.x - 14,
-      y: position.y - 14,
-      width: 28,
-      height: 28,
+      x: position.x - 16.8,
+      y: position.y - 16.8,
+      width: 33.6,
+      height: 33.6,
       opacity: hidden ? 0 : 0.6,
       mixBlendMode: "difference" as const,
       transition: {
@@ -109,8 +100,8 @@ export default function CustomCursor() {
 
   const cursorDotVariants = {
     default: {
-      x: position.x - 3.6, // 20% bigger dot
-      y: position.y - 3.6,
+      x: position.x - 4.32,
+      y: position.y - 4.32,
       opacity: hidden ? 0 : 0.8,
       scale: 1,
       transition: {
@@ -118,12 +109,11 @@ export default function CustomCursor() {
         mass: 0.1,
         stiffness: 1000,
         damping: 20,
-        ease: "linear",
       },
     },
     clicked: {
-      x: position.x - 3.6,
-      y: position.y - 3.6,
+      x: position.x - 4.32,
+      y: position.y - 4.32,
       scale: 0.5,
       opacity: hidden ? 0 : 0.8,
       transition: {
@@ -147,12 +137,12 @@ export default function CustomCursor() {
   return (
     <>
       <motion.div
-        className="cursor-dot fixed top-0 left-0 z-[999] pointer-events-none w-[7.2px] h-[7.2px] rounded-full bg-emerald-400"
+        className="cursor-dot fixed top-0 left-0 z-[999] pointer-events-none w-[8.64px] h-[8.64px] rounded-full bg-emerald-400"
         variants={cursorDotVariants}
         animate={linkHovered ? "hovered" : clicked ? "clicked" : "default"}
       />
       <motion.div
-        className="cursor-dot-outline fixed top-0 left-0 z-[998] pointer-events-none w-[20px] h-[20px] rounded-full border border-emerald-400"
+        className="cursor-dot-outline fixed top-0 left-0 z-[998] pointer-events-none w-[24px] h-[24px] rounded-full border border-emerald-400"
         variants={cursorOutlineVariants}
         animate={linkHovered ? "hovered" : clicked ? "clicked" : "default"}
       />
