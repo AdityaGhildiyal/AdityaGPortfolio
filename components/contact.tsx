@@ -97,7 +97,7 @@ export default function Contact() {
         className="max-w-4xl mx-auto"
       >
         <motion.div variants={itemVariants} className="mb-12">
-          <div className="text-sm font-mono text-emerald-400 mb-2">> contact.init()</div>
+          <div className="text-sm font-mono text-emerald-400 mb-2"> contact.init()</div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-mono">
             Get In Touch<span className="text-emerald-400">;</span>
           </h2>
