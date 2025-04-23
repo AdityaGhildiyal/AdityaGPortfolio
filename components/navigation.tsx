@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-scroll"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import NextLink from "next/link"
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -31,8 +32,8 @@ export default function Navigation() {
     { name: "Skills", to: "skills" },
     { name: "Experience", to: "experience" },
     { name: "Projects", to: "projects" },
-    { name: "Blog", to: "blog" },
     { name: "Contact", to: "contact" },
+    { name: "PESE 400", to: "/pese" },
   ]
 
   return (
@@ -46,22 +47,32 @@ export default function Navigation() {
           isScrolled ? "bg-slate-900/80 backdrop-blur-md shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="hidden md:flex gap-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              spy={true}
-              smooth={true}
-              duration={1000}
-              offset={-70}
-              className="text-slate-300 hover:text-emerald-400 transition-colors cursor-pointer"
-              easing="easeInOutQuart"
-              activeClass="text-emerald-400"
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className="hidden md:flex gap-6 items-center">
+          {navLinks.map((link) =>
+            link.to === "/pese" ? (
+              <NextLink
+                key={link.name}
+                href={link.to}
+                className="text-slate-300 hover:text-emerald-400 transition-colors cursor-pointer"
+              >
+                {link.name}
+              </NextLink>
+            ) : (
+              <Link
+                key={link.to}
+                to={link.to}
+                spy={true}
+                smooth={true}
+                duration={1000}
+                offset={-70}
+                className="text-slate-300 hover:text-emerald-400 transition-colors cursor-pointer"
+                easing="easeInOutQuart"
+                activeClass="text-emerald-400"
+              >
+                {link.name}
+              </Link>
+            ),
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -93,21 +104,32 @@ export default function Navigation() {
           </Button>
 
           <div className="flex flex-col items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                spy={true}
-                smooth={true}
-                duration={1000}
-                offset={-70}
-                className="text-xl text-slate-300 hover:text-emerald-400 transition-colors cursor-pointer"
-                easing="easeInOutQuart"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.to === "/pese" ? (
+                <NextLink
+                  key={link.name}
+                  href={link.to}
+                  className="text-xl text-slate-300 hover:text-emerald-400 transition-colors cursor-pointer"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </NextLink>
+              ) : (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                  offset={-70}
+                  className="text-xl text-slate-300 hover:text-emerald-400 transition-colors cursor-pointer"
+                  easing="easeInOutQuart"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ),
+            )}
           </div>
         </motion.div>
       )}

@@ -5,9 +5,11 @@ import Projects from "@/components/projects"
 import Contact from "@/components/contact"
 import ParticleBackground from "@/components/particle-background"
 import ExperienceTimeline from "@/components/experience-timeline"
+
 import Testimonials from "@/components/testimonials"
 import BlogPreview from "@/components/blog-preview"
 import Achievements from "@/components/achievements"
+
 import CustomCursor from "@/components/custom-cursor"
 import Navigation from "@/components/navigation"
 import ThreeDModel from "@/components/three-d-model"
@@ -29,9 +31,6 @@ export default function Home() {
         </div>
         <ExperienceTimeline />
         <Projects />
-        <Achievements />
-        <Testimonials />
-        <BlogPreview />
         <Contact />
       </div>
     </main>

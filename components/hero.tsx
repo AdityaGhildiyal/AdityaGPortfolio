@@ -11,7 +11,7 @@ export default function Hero() {
   const fullText = "Aditya Ghildiyal"
   const [showCursor, setShowCursor] = useState(true)
   const [subtitle, setSubtitle] = useState("")
-  const fullSubtitle = "Full Stack Developer"
+  const fullSubtitle = "CSE Student"
 
   useEffect(() => {
     if (text.length < fullText.length) {

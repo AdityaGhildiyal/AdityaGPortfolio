@@ -60,7 +60,7 @@ export default function About() {
             </p>
             <p className="pl-6 mb-2">
               <span className="text-purple-400">title</span>:{" "}
-              <span className="text-green-300">&quot;Freelancing Web Developer&quot;</span>,
+              <span className="text-green-300">&quot;CSE Student&quot;</span>,
             </p>
             <p className="pl-6 mb-2">
               <span className="text-purple-400">location</span>:{" "}
