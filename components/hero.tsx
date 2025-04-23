@@ -130,9 +130,11 @@ export default function Hero() {
           <Link to="projects" spy={true} smooth={true} duration={1000} offset={-70}>
             <Button className="bg-emerald-500 hover:bg-emerald-600 text-black font-mono">View Projects</Button>
           </Link>
-          <Button variant="outline" className="border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 font-mono">
-            Download Resume
-          </Button>
+          <a href="/resume.pdf" download="AdityaGhildiyal_Resume.pdf">
+            <Button variant="outline" className="border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 font-mono">
+              Download Resume
+            </Button>
+          </a>
         </motion.div>
       </div>
 
