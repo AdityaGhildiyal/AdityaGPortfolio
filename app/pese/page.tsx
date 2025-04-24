@@ -109,7 +109,9 @@ export default function PESEPage() {
           {activeTab === "introduction" && <SelfIntroduction />}
           {activeTab === "profiling" && <ProfilingSheet />}
           {activeTab === "movie" && <MovieReview />}
-          {activeTab === "presentation" && <PresentationSkills />}
+          {activeTab === "presentation" && (
+            <PresentationSkills />
+          )}
           {activeTab === "discussion" && <GroupDiscussion />}
         </motion.div>
       </motion.div>
@@ -153,6 +155,60 @@ function SelfIntroduction() {
         </div>
 
         <div className="space-y-8">
+          <div className="bg-slate-900/50 rounded-lg border border-slate-800 backdrop-blur-sm overflow-hidden">
+            <div className="bg-slate-800/80 px-4 py-3 border-b border-slate-700">
+              <div className="flex items-center">
+                <span className="text-emerald-400 mr-2 text-lg">$</span>
+                <h3 className="text-base font-bold text-slate-100">Self Introduction</h3>
+              </div>
+            </div>
+
+            <div className="p-4">
+              <div className="bg-slate-800/60 rounded-lg p-4 mb-6 border border-slate-700">
+                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
+                  <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>
+                  About Me
+                </h4>
+                <div className="text-slate-300 text-sm">
+                  <p className="mb-4">
+                    Hello! I'm Aditya Ghildiyal, a second-year Computer Science and Engineering student at Graphic Era
+                    Hill University in Dehradun, Uttarakhand. I'm passionate about web development, algorithms, and
+                    creating efficient solutions to real-world problems.
+                  </p>
+
+                  <p className="mb-4">
+                    My technical skills include proficiency in C, C++, Python, JavaScript, and TypeScript. I've worked
+                    on several projects including a ChatBot for my university, an ERP system, and a pathfinding
+                    visualization tool. I enjoy the challenge of optimizing code and implementing complex algorithms.
+                  </p>
+
+                  <p>
+                    Beyond coding, I'm interested in AI research and competitive programming. I believe in continuous
+                    learning and am always looking to expand my knowledge in emerging technologies. My goal is to become
+                    a skilled software engineer specializing in full-stack development and artificial intelligence.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6">
+                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
+                  <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
+                  Self Introduction Video
+                </h4>
+                <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
+                  <video
+                    className="w-full h-full object-contain"
+                    controls
+                    src="/self-intro.mp4"
+                    poster="/placeholder.svg?height=400&width=600&text=Self Introduction Video"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="bg-slate-900/50 rounded-lg border border-slate-800 backdrop-blur-sm overflow-hidden">
             <div className="bg-slate-800/80 px-4 py-3 border-b border-slate-700">
               <div className="flex items-center">
@@ -220,60 +276,6 @@ function SelfIntroduction() {
               </div>
             </div>
           </div>
-
-          <div className="bg-slate-900/50 rounded-lg border border-slate-800 backdrop-blur-sm overflow-hidden">
-            <div className="bg-slate-800/80 px-4 py-3 border-b border-slate-700">
-              <div className="flex items-center">
-                <span className="text-emerald-400 mr-2 text-lg">$</span>
-                <h3 className="text-base font-bold text-slate-100">Self Introduction</h3>
-              </div>
-            </div>
-
-            <div className="p-4">
-              <div className="bg-slate-800/60 rounded-lg p-4 mb-6 border border-slate-700">
-                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
-                  <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>
-                  About Me
-                </h4>
-                <div className="text-slate-300 text-sm">
-                  <p className="mb-4">
-                    Hello! I'm Aditya Ghildiyal, a second-year Computer Science and Engineering student at Graphic Era
-                    Hill University in Dehradun, Uttarakhand. I'm passionate about web development, algorithms, and
-                    creating efficient solutions to real-world problems.
-                  </p>
-
-                  <p className="mb-4">
-                    My technical skills include proficiency in C, C++, Python, JavaScript, and TypeScript. I've worked
-                    on several projects including a ChatBot for my university, an ERP system, and a pathfinding
-                    visualization tool. I enjoy the challenge of optimizing code and implementing complex algorithms.
-                  </p>
-
-                  <p>
-                    Beyond coding, I'm interested in AI research and competitive programming. I believe in continuous
-                    learning and am always looking to expand my knowledge in emerging technologies. My goal is to become
-                    a skilled software engineer specializing in full-stack development and artificial intelligence.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
-                  <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
-                  Self Introduction Video
-                </h4>
-                <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
-                  <video
-                    className="w-full h-full object-contain"
-                    controls
-                    src="/self-intro.mp4"
-                    poster="/placeholder.svg?height=400&width=600&text=Self Introduction Video"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -314,7 +316,7 @@ function ProfilingSheet() {
         "Logical Thinking & Problem-Solving – Successfully implemented the A* algorithm for a shortest path finder project.\n\nAdaptability & Quick Learning – Switched from Django to Next.js when developing a chatbot, proving my ability to learn new technologies quickly.",
     },
     {
-      question: "Write about your weaknesses. What are you doing to overcome your weaknesses?",
+      question: "Write about your weaknesses. What are you doing to improve your weaknesses?",
       answer:
         "Typing Speed – Working on improving my typing accuracy and speed through daily practice.\n\nTime Management – Using task prioritization techniques and scheduling my projects efficiently.",
     },
@@ -331,14 +333,15 @@ function ProfilingSheet() {
         "Extracurricular Activities:\n• Web development\n• AI research\n• Competitive programming\n\nSports:\n• Chess\n• Table tennis\n\nOther Interests:\n• Deep-sea creatures and their behaviors",
     },
     {
-      question: "Give an example of an area, concept or thing that you are absolutely passionate about.",
+      question:
+        "Write 3 leadership qualities. How many do you possess? Write an instance where you have applied those qualities.",
       answer:
-        "I am deeply interested in AI and algorithm optimization. Understanding how search and pathfinding algorithms work, such as A* and Dijkstra's, excites me, and I enjoy implementing them in projects.",
+        "1. Decision-making\n\n2. Problem-solving\n\n3. Team coordination\n\nI demonstrated problem-solving and team coordination when leading my team in the Attendance System project. I ensured smooth development, assigned tasks efficiently, and handled technical challenges.",
     },
     {
-      question: "Describe yourself as an individual in 5 lines.",
+      question: "So finally, tell us something more about yourself or introduce yourself.",
       answer:
-        "1. Passionate about building scalable web applications.\n\n2. Enjoys problem-solving and algorithmic challenges.\n\n3. Constantly learning new programming languages and frameworks.\n\n4. Adapts quickly to new technologies and methodologies.\n\n5. Aims to develop impactful software solutions in the future.",
+        "I am a second-year CSE student at Graphic Era Hill University, passionate about software development and algorithm design. My expertise lies in React, Next.js, and MongoDB, and I enjoy building projects that solve real-world problems. Apart from coding, I have an interest in deep-sea creatures and their behaviors. I am always eager to learn and improve my skills, whether in web development, AI, or competitive programming.",
     },
     {
       question: "What kinds of people do you enjoy working with?",
@@ -448,7 +451,7 @@ function ProfilingSheet() {
   )
 }
 
-// Movie Review Component (styled to match portfolio theme)
+// Movie Review Component
 function MovieReview() {
   return (
     <div className="w-full font-mono">
@@ -479,23 +482,6 @@ function MovieReview() {
                   uncertainties in life.
                 </p>
               </div>
-
-              <div className="mt-6">
-                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
-                  <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
-                  My Video Response
-                </h4>
-                <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
-                  <video
-                    className="w-full h-full object-contain"
-                    controls
-                    src="/MR1.mp4"
-                    poster="/placeholder.svg?height=400&width=600&text=Movie Review 1"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -517,23 +503,6 @@ function MovieReview() {
                   eventual triumph. It's a rollercoaster of emotions, with moments of pain, motivation, and triumph all
                   blended into one masterpiece.
                 </p>
-              </div>
-
-              <div className="mt-6">
-                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
-                  <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
-                  My Video Response
-                </h4>
-                <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
-                  <video
-                    className="w-full h-full object-contain"
-                    controls
-                    src="/MR2.mp4"
-                    poster="/placeholder.svg?height=400&width=600&text=Movie Review 2"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
               </div>
             </div>
           </div>
@@ -557,23 +526,6 @@ function MovieReview() {
                   </li>
                 </ul>
               </div>
-
-              <div className="mt-6">
-                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
-                  <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
-                  My Video Response
-                </h4>
-                <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
-                  <video
-                    className="w-full h-full object-contain"
-                    controls
-                    src="/MR3.mp4"
-                    poster="/placeholder.svg?height=400&width=600&text=Movie Review 3"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -591,7 +543,7 @@ function MovieReview() {
                 questions above.
               </p>
 
-              <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center h-80 overflow-hidden group relative">
+              <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-80 overflow-hidden group relative">
                 <video
                   className="w-full h-full object-contain"
                   controls
@@ -656,23 +608,6 @@ function PresentationSkills() {
                     each team member had a clear role and section to present. We practiced timing, transitions between
                     speakers, and prepared for potential questions.
                   </p>
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
-                  <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
-                  Concept Video
-                </h4>
-                <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
-                  <video
-                    className="w-full h-full object-contain"
-                    controls
-                    src="/presentation-concept.mp4"
-                    poster="/placeholder.svg?height=400&width=600&text=Presentation Concept Video"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
                 </div>
               </div>
             </div>
@@ -796,23 +731,6 @@ function GroupDiscussion() {
                   </div>
                 </div>
               </div>
-
-              <div className="mt-6">
-                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
-                  <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
-                  Video Explanation
-                </h4>
-                <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
-                  <video
-                    className="w-full h-full object-contain"
-                    controls
-                    src="/gd-dos-donts.mp4"
-                    poster="/placeholder.svg?height=400&width=600&text=GD Do's and Don'ts Video"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -870,23 +788,6 @@ function GroupDiscussion() {
                       </p>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
-                  <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
-                  Video Explanation
-                </h4>
-                <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
-                  <video
-                    className="w-full h-full object-contain"
-                    controls
-                    src="/gd-types.mp4"
-                    poster="/placeholder.svg?height=400&width=600&text=GD Types Video"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
                 </div>
               </div>
             </div>
@@ -954,14 +855,14 @@ function GroupDiscussion() {
               <div className="mt-6">
                 <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
                   <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
-                  Video Explanation
+                  Group Discussion Video
                 </h4>
                 <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
                   <video
                     className="w-full h-full object-contain"
                     controls
                     src="/gd-idea-generation.mp4"
-                    poster="/placeholder.svg?height=400&width=600&text=Idea Generation Video"
+                    poster="/placeholder.svg?height=400&width=600&text=Group Discussion Video"
                   >
                     Your browser does not support the video tag.
                   </video>
