@@ -117,7 +117,14 @@ export default function PESEPage() {
   )
 }
 
-function TabButton({ icon, label, isActive, onClick }) {
+interface TabButtonProps {
+  icon: React.ReactNode;
+  label: string;
+  isActive: boolean;
+  onClick: () => void;
+}
+
+function TabButton({ icon, label, isActive, onClick }: TabButtonProps) {
   return (
     <button
       onClick={onClick}

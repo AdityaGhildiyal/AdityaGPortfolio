@@ -1,125 +1,109 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { useEffect, useState, useRef } from "react"
+import { motion, TargetAndTransition } from "framer-motion"
 
 export default function CustomCursor() {
+  type AnimationStyle = TargetAndTransition
+
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [clicked, setClicked] = useState(false)
   const [linkHovered, setLinkHovered] = useState(false)
-  const [hidden, setHidden] = useState(true)
+  const [visible, setVisible] = useState(false)
+
+  const dotRef = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
-    // Safely set initial position after mount
-    setPosition({ x: window.innerWidth / 2, y: window.innerHeight / 2 })
-    setHidden(false)
-
     const onMouseMove = (e: MouseEvent) => {
-      requestAnimationFrame(() => {
-        setPosition({ x: e.clientX, y: e.clientY })
-        setHidden(false)
-      })
+      setPosition({ x: e.clientX, y: e.clientY })
+      setVisible(true)
     }
 
-    const onMouseEnter = () => setHidden(false)
-    const onMouseLeave = () => setHidden(true)
+    const onMouseEnter = () => setVisible(true)
+    const onMouseLeave = () => setVisible(false)
     const onMouseDown = () => setClicked(true)
     const onMouseUp = () => setClicked(false)
 
-    const addListeners = () => {
-      document.addEventListener("mousemove", onMouseMove)
-      document.addEventListener("mouseenter", onMouseEnter)
-      document.addEventListener("mouseleave", onMouseLeave)
-      document.addEventListener("mousedown", onMouseDown)
-      document.addEventListener("mouseup", onMouseUp)
-    }
+    document.addEventListener("mousemove", onMouseMove)
+    document.addEventListener("mouseenter", onMouseEnter)
+    document.addEventListener("mouseleave", onMouseLeave)
+    document.addEventListener("mousedown", onMouseDown)
+    document.addEventListener("mouseup", onMouseUp)
 
-    const removeListeners = () => {
+    const elements = document.querySelectorAll("a, button, [role=button], input, textarea, select")
+    elements.forEach(el => {
+      el.addEventListener("mouseenter", () => setLinkHovered(true))
+      el.addEventListener("mouseleave", () => setLinkHovered(false))
+    })
+
+    return () => {
       document.removeEventListener("mousemove", onMouseMove)
       document.removeEventListener("mouseenter", onMouseEnter)
       document.removeEventListener("mouseleave", onMouseLeave)
       document.removeEventListener("mousedown", onMouseDown)
       document.removeEventListener("mouseup", onMouseUp)
-    }
 
-    const handleLinkHover = () => {
-      document.querySelectorAll("a, button, [role=button], input, textarea, select").forEach((el) => {
-        el.addEventListener("mouseenter", () => setLinkHovered(true))
-        el.addEventListener("mouseleave", () => setLinkHovered(false))
+      elements.forEach(el => {
+        el.removeEventListener("mouseenter", () => setLinkHovered(true))
+        el.removeEventListener("mouseleave", () => setLinkHovered(false))
       })
     }
-
-    addListeners()
-    handleLinkHover()
-
-    return () => removeListeners()
   }, [])
 
-  const transitionProps = {
-    type: "spring",
-    stiffness: 500,
-    damping: 30,
-    mass: 0.2,
+  // Smooth dot animation using requestAnimationFrame
+  const [dotPosition, setDotPosition] = useState({ x: 0, y: 0 })
+  useEffect(() => {
+    const lerp = (a: number, b: number, n: number) => (1 - n) * a + n * b
+
+    const animate = () => {
+      dotRef.current.x = lerp(dotRef.current.x, position.x, 0.5)
+      dotRef.current.y = lerp(dotRef.current.y, position.y, 0.5)
+      setDotPosition({ x: dotRef.current.x, y: dotRef.current.y })
+      requestAnimationFrame(animate)
+    }
+
+    animate()
+  }, [position])
+
+  const getCursorSize = () => (linkHovered ? 36 : 24)
+
+  const getOutlineStyle = (): AnimationStyle => {
+    const size = getCursorSize()
+    return {
+      x: position.x - size / 2,
+      y: position.y - size / 2,
+      width: size,
+      height: size,
+      opacity: visible ? 0.6 : 0,
+      scale: clicked ? 0.8 : 1,
+      mixBlendMode: linkHovered ? "difference" : "normal",
+      transition: { duration: 0 }
+    }
   }
 
-  const cursorOutlineVariants = {
-    default: {
-      x: position.x - 12,
-      y: position.y - 12,
-      opacity: hidden ? 0 : 0.5,
-      scale: 1,
-      transition: transitionProps,
-    },
-    clicked: {
-      x: position.x - 12,
-      y: position.y - 12,
-      scale: 0.8,
-      opacity: hidden ? 0 : 0.7,
-      transition: transitionProps,
-    },
-    hovered: {
-      x: position.x - 18,
-      y: position.y - 18,
-      width: 36,
-      height: 36,
-      opacity: hidden ? 0 : 0.6,
-      mixBlendMode: "difference" as const,
-      transition: transitionProps,
-    },
-  }
-
-  const cursorDotVariants = {
-    default: {
-      x: position.x - 4,
-      y: position.y - 4,
-      opacity: hidden ? 0 : 0.8,
-      scale: 1,
-      transition: { ...transitionProps, stiffness: 1000, damping: 40 },
-    },
-    clicked: {
-      x: position.x - 4,
-      y: position.y - 4,
-      scale: 0.6,
-      opacity: hidden ? 0 : 0.9,
-      transition: { ...transitionProps, stiffness: 1000, damping: 40 },
-    },
-    hovered: {
-      opacity: 0,
-      transition: { ...transitionProps, stiffness: 1000, damping: 40 },
-    },
+  const getDotStyle = (): AnimationStyle => {
+    const dotSize = 8.64
+    return {
+      x: dotPosition.x - dotSize / 2,
+      y: dotPosition.y - dotSize / 2,
+      opacity: visible && !linkHovered ? 0.8 : 0,
+      scale: clicked ? 0.5 : 1,
+      transition: {
+        duration: 0.15,
+        ease: "easeOut"
+      }
+    }
   }
 
   return (
     <>
       <motion.div
-        className="cursor-dot fixed top-0 left-0 z-[999] pointer-events-none w-2 h-2 rounded-full bg-emerald-400"
-        variants={cursorDotVariants}
-        animate={linkHovered ? "hovered" : clicked ? "clicked" : "default"}
+        className="cursor-dot fixed top-0 left-0 z-[999] pointer-events-none w-[8.64px] h-[8.64px] rounded-full bg-emerald-400"
+        animate={getDotStyle()}
       />
       <motion.div
-        className="cursor-outline fixed top-0 left-0 z-[998] pointer-events-none w-6 h-6 rounded-full border border-emerald-400"
-        variants={cursorOutlineVariants}
-        animate={linkHovered ? "hovered" : clicked ? "clicked" : "default"}
+        className="cursor-outline fixed top-0 left-0 z-[998] pointer-events-none rounded-full border border-emerald-400"
+        animate={getOutlineStyle()}
       />
     </>
   )
