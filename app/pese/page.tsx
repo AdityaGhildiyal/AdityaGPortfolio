@@ -282,7 +282,7 @@ function SelfIntroduction() {
   )
 }
 
-// Profiling Sheet Component (from the provided code, but styled to match portfolio theme)
+// Profiling Sheet Component 
 function ProfilingSheet() {
   const questions = [
     {
@@ -296,24 +296,24 @@ function ProfilingSheet() {
         "I have always been passionate about technology and problem-solving. Engineering provides the perfect platform to apply logic, creativity, and innovation to build solutions that impact society. I enjoy writing code, optimizing algorithms, and developing interactive applications, which makes software engineering the ideal field for me.",
     },
     {
-      question: "Write about projects or internship you have done/ are doing along with the learning.",
+      question: "Write about projects or internship you have done/are doing along with the learning.",
       answer:
         "Attendance System with QR Code\n\nTechnologies: React, Next.js, MongoDB\n\nLearned about frontend development, API integration, and database management.\n\nOnline Class Platform\n\nTechnologies: Next.js, ZEGOCLOUD (for media streaming)\n\nGained knowledge about real-time communication, authentication, and cloud-based APIs.\n\nWordle Game (Cross-Platform)\n\nTechnologies: Next.js (web), React Native (mobile)\n\nLearned about game logic implementation, UI design, and cross-platform development.",
     },
     {
       question: "What would you consider a significant achievement in your life and why?",
       answer:
-        "Building a functional chatbot for Graphic Era Hill University using Next.js and MongoDB. It provides students with information about placements, courses, and admissions. This project helped me understand API routes, database storage, and UI optimization.",
+        "Overcoming my shyness during the first year of college was a major achievement. I gradually built confidence by participating in group discussions, volunteering for small tasks in class, and consistently stepping out of my comfort zone. This helped me interact better with people, work effectively in teams, and express my ideas more clearly.",
     },
     {
       question: "Write about a failure of yours which you consider to share. What have you learned from it?",
       answer:
-        "I initially started working with Django for backend development but found it too complex for my use case. After struggling with it, I switched to Next.js and built my applications efficiently. This taught me that choosing the right technology stack is crucial, and sometimes, simplifying an approach leads to better results.",
+        "For a long time, I was indisciplined about my studies, leading to poor grades. This experience taught me the importance of consistency and planning. I started following a structured schedule, set short-term goals, and focused on daily improvements, which helped me regain control over my academics.",
     },
     {
       question: "What are your strengths? Write one or two instances where you have demonstrated your strengths.",
       answer:
-        "Logical Thinking & Problem-Solving – Successfully implemented the A* algorithm for a shortest path finder project.\n\nAdaptability & Quick Learning – Switched from Django to Next.js when developing a chatbot, proving my ability to learn new technologies quickly.",
+        "Problem-Solving – Helped organize a college event when key members dropped out last minute by quickly coming up with new plans.\n\nLeadership – Coordinated a group outing by managing everyone's preferences, arranging logistics, and ensuring smooth communication among all members.",
     },
     {
       question: "Write about your weaknesses. What are you doing to improve your weaknesses?",
@@ -321,43 +321,35 @@ function ProfilingSheet() {
         "Typing Speed – Working on improving my typing accuracy and speed through daily practice.\n\nTime Management – Using task prioritization techniques and scheduling my projects efficiently.",
     },
     {
-      question:
-        "What is the most difficult moment that you have faced in your life so far? What qualities helped you to overcome the moment?",
+      question: "What is the most difficult moment that you have faced in your life so far? What qualities helped you to overcome the moment?",
       answer:
-        "Balancing college coursework and project development was challenging. Discipline, persistence, and problem-solving skills helped me manage both effectively.",
+        "Preparing for semester exams while managing family responsibilities was challenging. Qualities like resilience, time management, and patience helped me handle both aspects without giving up.",
     },
     {
-      question:
-        "Apart from academics, what else are you interested in? Make a separate list in terms of extracurricular activities, sports and any other interests.",
+      question: "Apart from academics, what else are you interested in? Make a separate list in terms of extracurricular activities, sports and any other interests.",
       answer:
         "Extracurricular Activities:\n• Web development\n• AI research\n• Competitive programming\n\nSports:\n• Chess\n• Table tennis\n\nOther Interests:\n• Deep-sea creatures and their behaviors",
     },
     {
-      question:
-        "Write 3 leadership qualities. How many do you possess? Write an instance where you have applied those qualities.",
+      question: "Write 3 leadership qualities. How many do you possess? Write an instance where you have applied those qualities.",
       answer:
-        "1. Decision-making\n\n2. Problem-solving\n\n3. Team coordination\n\nI demonstrated problem-solving and team coordination when leading my team in the Attendance System project. I ensured smooth development, assigned tasks efficiently, and handled technical challenges.",
+        "1. Decision-making\n2. Problem-solving\n3. Team coordination\n\nI demonstrated problem-solving and team coordination when leading my team in the Attendance System project. I ensured smooth development, assigned tasks efficiently, and handled technical challenges.",
     },
-    {
-      question: "So finally, tell us something more about yourself or introduce yourself.",
-      answer:
-        "I am a second-year CSE student at Graphic Era Hill University, passionate about software development and algorithm design. My expertise lies in React, Next.js, and MongoDB, and I enjoy building projects that solve real-world problems. Apart from coding, I have an interest in deep-sea creatures and their behaviors. I am always eager to learn and improve my skills, whether in web development, AI, or competitive programming.",
-    },
+    
     {
       question: "What kinds of people do you enjoy working with?",
       answer:
         "People who are collaborative, open-minded, and eager to learn. I enjoy working with those who take initiative and contribute innovative ideas.",
     },
     {
-      question:
-        "What kinds of people you don't want to work with? What would you do if they became your senior in your dream job?",
+      question: "What kinds of people you don't want to work with? What would you do if they became your senior in your dream job?",
       answer:
         "I prefer not to work with uncooperative or overly negative individuals. However, if such a person became my senior, I would maintain professionalism, adapt, and focus on learning from the experience.",
     },
     {
       question: "What do you expect from your first job? Prioritize and write in order.",
       answer:
-        "1. Opportunities for learning and growth.\n\n2. A collaborative and innovative work environment.\n\n3. Challenging projects that improve my skills.\n\n4. Fair compensation and work-life balance.\n\n5. Exposure to industry best practices and technologies.",
+        "1. Opportunities for learning and growth.\n2. A collaborative and innovative work environment.\n3. Challenging projects that improve my skills.\n4. Fair compensation and work-life balance.\n5. Exposure to industry best practices and technologies.",
     },
     {
       question: "In the past year, what have you been dissatisfied about in your performance?",
@@ -365,35 +357,27 @@ function ProfilingSheet() {
         "I felt that my time management was not efficient enough, especially while working on multiple projects. I have since started prioritizing tasks and using productivity tools to improve efficiency.",
     },
     {
-      question:
-        "Rate yourself out of 5 in verbal communication. What are you doing to improve your communication skills?",
+      question: "Rate yourself out of 5 in verbal communication. What are you doing to improve your communication skills?",
       answer:
         "3.5/5 – I can explain technical concepts well but aim to improve my clarity and confidence. To improve, I participate in discussions, explain concepts to peers, and engage in coding communities.",
     },
     {
-      question:
-        "Who is your role model? What qualities of that person you would like to see in your personality and why?",
+      question: "Who is your role model? What qualities of that person you would like to see in your personality and why?",
       answer:
         "Elon Musk – I admire his vision, persistence, and problem-solving skills. I want to develop the ability to think ahead, take calculated risks, and innovate in my field.",
     },
     {
-      question:
-        "Write a few lines about your friends. Do you think they help/ may help you in achieving your goals? If yes, how? If no, why do you accompany them?",
+      question: "Write a few lines about your friends. Do you think they help/may help you in achieving your goals? If yes, how? If no, why do you accompany them?",
       answer:
         "My friends are motivated and hardworking, especially in tech-related fields. We often share knowledge, discuss coding problems, and work on projects together, helping each other grow.",
-    },
-    {
-      question:
-        "Write 3 leadership qualities. How many do you possess? Write an instance where you have applied those qualities.",
-      answer:
-        "1. Decision-making\n\n2. Problem-solving\n\n3. Team coordination\n\nI demonstrated problem-solving and team coordination when leading my team in the Attendance System project. I ensured smooth development, assigned tasks efficiently, and handled technical challenges.",
     },
     {
       question: "So finally, tell us something more about yourself or introduce yourself.",
       answer:
         "I am a second-year CSE student at Graphic Era Hill University, passionate about software development and algorithm design. My expertise lies in React, Next.js, and MongoDB, and I enjoy building projects that solve real-world problems. Apart from coding, I have an interest in deep-sea creatures and their behaviors. I am always eager to learn and improve my skills, whether in web development, AI, or competitive programming.",
     },
-  ]
+  ];
+
 
   return (
     <div className="w-full font-mono">
@@ -604,9 +588,9 @@ function PresentationSkills() {
                   </ul>
 
                   <p>
-                    For our team presentation, we focused on creating a cohesive narrative around our topic, ensuring
+                    For our team presentation, we focused on creating a cohesive narrative around our product, ensuring
                     each team member had a clear role and section to present. We practiced timing, transitions between
-                    speakers, and prepared for potential questions.
+                    speakers, and prepared for potential questions from the investors.
                   </p>
                 </div>
               </div>
@@ -629,21 +613,18 @@ function PresentationSkills() {
                 </h4>
                 <div className="text-slate-300 text-sm">
                   <p className="mb-4">
-                    Our team presentation focused on "Emerging Technologies in Software Development." We covered:
+                    Our team presentation simulated a pitch to potential investors for our product, <strong>React CRM</strong> — an innovative Customer Relationship Management tool designed for modern businesses.
                   </p>
 
                   <ul className="list-disc list-inside space-y-2 mb-4">
-                    <li>Current trends in AI and machine learning</li>
-                    <li>The impact of blockchain beyond cryptocurrency</li>
-                    <li>Edge computing and its applications</li>
-                    <li>The future of web development with WebAssembly</li>
-                    <li>Practical applications and case studies</li>
+                    <li>Our <strong>CEO</strong> introduced the product vision, mission, and the market opportunity.</li>
+                    <li>The <strong>Technical Head</strong> explained the core features, technical architecture, and advantages of using React CRM.</li>
+                    <li>The <strong>Marketing Head</strong> discussed the go-to-market strategies, target audience, and brand positioning.</li>
+                    <li>The <strong>Financial Head</strong> presented the business model, projected revenues, funding requirements, and expected ROI for the investors.</li>
                   </ul>
 
                   <p>
-                    Each team member researched their section thoroughly and prepared visual aids to support their
-                    points. We practiced together to ensure smooth transitions and consistent pacing throughout the
-                    presentation.
+                    We structured our presentation to mimic a real-world investor pitch, focusing on clarity, confidence, and engagement. Visual aids were carefully designed to support each section, and we rehearsed extensively to ensure seamless transitions and answer any potential questions from the investors.
                   </p>
                 </div>
               </div>
@@ -672,6 +653,7 @@ function PresentationSkills() {
   )
 }
 
+
 // Group Discussion Component
 function GroupDiscussion() {
   return (
@@ -685,6 +667,7 @@ function GroupDiscussion() {
         </div>
 
         <div className="space-y-8">
+          {/* Do's and Don'ts Section */}
           <div className="bg-slate-900/50 rounded-lg border border-slate-800 backdrop-blur-sm overflow-hidden">
             <div className="bg-slate-800/80 px-4 py-3 border-b border-slate-700">
               <div className="flex items-center">
@@ -692,7 +675,6 @@ function GroupDiscussion() {
                 <h3 className="text-base font-bold text-slate-100">Do's and Don'ts of Group Discussion</h3>
               </div>
             </div>
-
             <div className="p-4">
               <div className="bg-slate-800/60 rounded-lg p-4 mb-6 border border-slate-700">
                 <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
@@ -714,7 +696,6 @@ function GroupDiscussion() {
                         <li>Stay on topic and be relevant</li>
                       </ul>
                     </div>
-
                     <div>
                       <h5 className="text-red-400 mb-3 font-bold">Don'ts</h5>
                       <ul className="list-disc list-inside space-y-2">
@@ -734,6 +715,7 @@ function GroupDiscussion() {
             </div>
           </div>
 
+          {/* Types of Group Discussions Section */}
           <div className="bg-slate-900/50 rounded-lg border border-slate-800 backdrop-blur-sm overflow-hidden">
             <div className="bg-slate-800/80 px-4 py-3 border-b border-slate-700">
               <div className="flex items-center">
@@ -741,58 +723,41 @@ function GroupDiscussion() {
                 <h3 className="text-base font-bold text-slate-100">Types of Group Discussions</h3>
               </div>
             </div>
-
             <div className="p-4">
               <div className="bg-slate-800/60 rounded-lg p-4 mb-6 border border-slate-700">
                 <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
                   <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>
                   Different Formats of Group Discussions
                 </h4>
-                <div className="text-slate-300 text-sm">
-                  <div className="space-y-4">
-                    <div>
-                      <h5 className="text-emerald-400 mb-2 font-bold">Topic-based GD</h5>
-                      <p>
-                        Participants discuss a given topic or theme, sharing their views and perspectives. These can be
-                        further divided into:
-                      </p>
-                      <ul className="list-disc list-inside mt-2 ml-4">
-                        <li>Factual topics (based on events, data)</li>
-                        <li>Controversial topics (with opposing viewpoints)</li>
-                        <li>Abstract topics (conceptual or philosophical)</li>
-                        <li>Case study-based discussions</li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h5 className="text-emerald-400 mb-2 font-bold">Role-based GD</h5>
-                      <p>
-                        Participants are assigned specific roles or perspectives to represent during the discussion,
-                        regardless of their personal views.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h5 className="text-emerald-400 mb-2 font-bold">Problem-solving GD</h5>
-                      <p>
-                        The group is presented with a problem or scenario and must work together to find solutions or
-                        strategies.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h5 className="text-emerald-400 mb-2 font-bold">Case-based GD</h5>
-                      <p>
-                        Participants analyze a detailed case study and discuss various aspects, implications, and
-                        potential actions.
-                      </p>
-                    </div>
+                <div className="text-slate-300 text-sm space-y-4">
+                  <div>
+                    <h5 className="text-emerald-400 mb-2 font-bold">Topic-based GD</h5>
+                    <p>Participants discuss a given topic or theme, sharing their views and perspectives. These can be further divided into:</p>
+                    <ul className="list-disc list-inside mt-2 ml-4">
+                      <li>Factual topics (based on events, data)</li>
+                      <li>Controversial topics (with opposing viewpoints)</li>
+                      <li>Abstract topics (conceptual or philosophical)</li>
+                      <li>Case study-based discussions</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="text-emerald-400 mb-2 font-bold">Role-based GD</h5>
+                    <p>Participants are assigned specific roles or perspectives to represent during the discussion, regardless of their personal views.</p>
+                  </div>
+                  <div>
+                    <h5 className="text-emerald-400 mb-2 font-bold">Problem-solving GD</h5>
+                    <p>The group is presented with a problem or scenario and must work together to find solutions or strategies.</p>
+                  </div>
+                  <div>
+                    <h5 className="text-emerald-400 mb-2 font-bold">Case-based GD</h5>
+                    <p>Participants analyze a detailed case study and discuss various aspects, implications, and potential actions.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* Idea Generation Techniques Section */}
           <div className="bg-slate-900/50 rounded-lg border border-slate-800 backdrop-blur-sm overflow-hidden">
             <div className="bg-slate-800/80 px-4 py-3 border-b border-slate-700">
               <div className="flex items-center">
@@ -800,58 +765,29 @@ function GroupDiscussion() {
                 <h3 className="text-base font-bold text-slate-100">Idea Generation Techniques</h3>
               </div>
             </div>
-
             <div className="p-4">
               <div className="bg-slate-800/60 rounded-lg p-4 mb-6 border border-slate-700">
                 <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
                   <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>
                   Methods for Generating Ideas in Group Discussions
                 </h4>
-                <div className="text-slate-300 text-sm">
-                  <div className="space-y-4">
-                    <div>
-                      <h5 className="text-emerald-400 mb-2 font-bold">Brainstorming</h5>
-                      <p>
-                        A free-flowing session where all ideas are welcomed without criticism, focusing on quantity over
-                        quality initially.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h5 className="text-emerald-400 mb-2 font-bold">Mind Mapping</h5>
-                      <p>
-                        Visual organization of ideas around a central concept, showing relationships and connections
-                        between different thoughts.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h5 className="text-emerald-400 mb-2 font-bold">SCAMPER Technique</h5>
-                      <p>
-                        A structured approach using prompts: Substitute, Combine, Adapt, Modify, Put to other uses,
-                        Eliminate, Reverse.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h5 className="text-emerald-400 mb-2 font-bold">Six Thinking Hats</h5>
-                      <p>
-                        Edward de Bono's method of looking at problems from different perspectives (facts, emotions,
-                        caution, benefits, creativity, process).
-                      </p>
-                    </div>
-
-                    <div>
-                      <h5 className="text-emerald-400 mb-2 font-bold">5W1H Method</h5>
-                      <p>
-                        Analyzing a topic by asking Who, What, When, Where, Why, and How questions to explore all
-                        aspects.
-                      </p>
-                    </div>
+                <div className="text-slate-300 text-sm space-y-4">
+                  <div>
+                    <h5 className="text-emerald-400 mb-2 font-bold">5W1H Method</h5>
+                    <p>
+                      Analyzing a topic by asking <strong>Who, What, When, Where, Why,</strong> and <strong>How</strong> questions to explore all aspects deeply and systematically.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 className="text-emerald-400 mb-2 font-bold">SPEEL Technique</h5>
+                    <p>
+                      A method that encourages idea generation by considering: <strong>Social, Political, Economic, Environmental,</strong> and <strong>Legal</strong> dimensions of a topic.
+                    </p>
                   </div>
                 </div>
               </div>
 
+              {/* Video Section */}
               <div className="mt-6">
                 <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
                   <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
