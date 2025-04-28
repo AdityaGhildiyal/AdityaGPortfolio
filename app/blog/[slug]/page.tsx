@@ -6,7 +6,6 @@ import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowLeft, Calendar, Clock, Share2, Check, Copy, Facebook, Twitter, Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import CustomCursor from "@/components/custom-cursor"
 
 // Blog post content
 const blogPosts = {
@@ -532,7 +531,6 @@ export default function BlogPost() {
 
   return (
     <div className="min-h-screen bg-[#0A0E17] text-slate-100">
-      <CustomCursor />
       <header className="bg-slate-900/80 backdrop-blur-md sticky top-0 z-10 border-b border-slate-800">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors">
