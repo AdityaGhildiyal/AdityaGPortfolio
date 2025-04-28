@@ -1,9 +1,12 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowLeft, FileText, Film, Terminal, Video, Users, Brain } from "lucide-react"
+import OptimizedVideo from "@/components/optimized-video"
 
 export default function PESEPage() {
   const [activeTab, setActiveTab] = useState("introduction")
@@ -107,9 +110,7 @@ export default function PESEPage() {
           {activeTab === "introduction" && <SelfIntroduction />}
           {activeTab === "profiling" && <ProfilingSheet />}
           {activeTab === "movie" && <MovieReview />}
-          {activeTab === "presentation" && (
-            <PresentationSkills />
-          )}
+          {activeTab === "presentation" && <PresentationSkills />}
           {activeTab === "discussion" && <GroupDiscussion />}
         </motion.div>
       </motion.div>
@@ -118,10 +119,10 @@ export default function PESEPage() {
 }
 
 interface TabButtonProps {
-  icon: React.ReactNode;
-  label: string;
-  isActive: boolean;
-  onClick: () => void;
+  icon: React.ReactNode
+  label: string
+  isActive: boolean
+  onClick: () => void
 }
 
 function TabButton({ icon, label, isActive, onClick }: TabButtonProps) {
@@ -169,18 +170,23 @@ function SelfIntroduction() {
                 </h4>
                 <div className="text-slate-300 text-sm">
                   <p className="mb-4">
-                    Hello! I'm Aditya Ghildiyal, born in Delhi, with most of my schooling completed in Delhi and Bhopal. I am currently pursuing a Bachelor of Technology (B.Tech) in Computer Science and Engineering at Graphic Era Hill University, Dehradun, Uttarakhand.
+                    Hello! I'm Aditya Ghildiyal, born in Delhi, with most of my schooling completed in Delhi and Bhopal.
+                    I am currently pursuing a Bachelor of Technology (B.Tech) in Computer Science and Engineering at
+                    Graphic Era Hill University, Dehradun, Uttarakhand.
                   </p>
 
                   <p className="mb-4">
-                    I have a strong passion for web development, algorithms, and building efficient technology solutions. My technical skills include proficiency in C, C++, Python, JavaScript, and React. I enjoy solving complex problems and optimizing code for better performance.
+                    I have a strong passion for web development, algorithms, and building efficient technology
+                    solutions. My technical skills include proficiency in C, C++, Python, JavaScript, and React. I enjoy
+                    solving complex problems and optimizing code for better performance.
                   </p>
 
                   <p>
-                    Beyond technical skills, I have a deep interest in artificial intelligence research and competitive programming. I am committed to continuous learning and aspire to build a career as a software engineer specializing in full-stack development and artificial intelligence.
+                    Beyond technical skills, I have a deep interest in artificial intelligence research and competitive
+                    programming. I am committed to continuous learning and aspire to build a career as a software
+                    engineer specializing in full-stack development and artificial intelligence.
                   </p>
                 </div>
-
               </div>
 
               <div className="mt-6">
@@ -188,17 +194,11 @@ function SelfIntroduction() {
                   <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
                   Self Introduction Video
                 </h4>
-                <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
-                  <video
-                    className="w-full h-full object-contain"
-                    controls
-                    preload="metadata"
-                    src="/self-introduction.mp4"
-                    poster="/placeholder.svg?height=400&width=600&text=Self Introduction Video"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+                <OptimizedVideo
+                  src="/self-introduction.mp4"
+                  poster="/placeholder.svg?height=400&width=600&text=Self Introduction Video"
+                  title="Self Introduction"
+                />
               </div>
             </div>
           </div>
@@ -255,18 +255,29 @@ function SelfIntroduction() {
               <div className="mt-6">
                 <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
                   <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
-                  Brain Activity Video
+                  Brain Activity Summary
                 </h4>
-                <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
-                  <video
-                    className="w-full h-full object-contain"
-                    controls
-                    preload="metadata"
-                    src="/brain-activity.mp4"
-                    poster="/placeholder.svg?height=400&width=600&text=Brain Activity Video"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
+                <div className="bg-slate-800/60 rounded-lg p-4 border border-slate-700">
+                  <p className="text-slate-300 text-sm">
+                    Through various activities and assessments, I've discovered that I have a balanced brain profile
+                    with a slight preference for left-brain activities. This explains my aptitude for programming and
+                    problem-solving while still maintaining creative abilities for design and innovative thinking.
+                  </p>
+                  <div className="mt-4 flex justify-center">
+                    <div className="bg-slate-900/80 rounded-lg p-4 border border-slate-700 max-w-md">
+                      <div className="flex justify-between items-center mb-3">
+                        <span className="text-emerald-400 font-mono">Left Brain</span>
+                        <span className="text-purple-400 font-mono">Right Brain</span>
+                      </div>
+                      <div className="h-4 bg-slate-700 rounded-full overflow-hidden">
+                        <div
+                          className="h-full bg-gradient-to-r from-emerald-500 to-purple-500"
+                          style={{ width: "55%" }}
+                        ></div>
+                      </div>
+                      <div className="mt-2 text-xs text-center text-slate-400">55% Left Brain / 45% Right Brain</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -277,12 +288,13 @@ function SelfIntroduction() {
   )
 }
 
-// Profiling Sheet Component 
+// Profiling Sheet Component
 function ProfilingSheet() {
   const questions = [
     {
       question: "Write your career objective.",
-      answer: "My career objective is to become a skilled software developer, keep learning new technologies, and work on projects that make a real difference.I want to keep improving my skills, grow with the company I work for, and build a successful career by giving my best to every opportunity I get..",
+      answer:
+        "My career objective is to become a skilled software developer, keep learning new technologies, and work on projects that make a real difference.I want to keep improving my skills, grow with the company I work for, and build a successful career by giving my best to every opportunity I get..",
     },
     {
       question: "Why do you want to be an engineer? Elaborate reasons.",
@@ -305,40 +317,45 @@ function ProfilingSheet() {
         "For a long time, I was indisciplined about my studies, leading to poor grades. This experience taught me the importance of consistency and planning. I started following a structured schedule, set short-term goals, and focused on daily improvements, which helped me regain control over my academics.",
     },
     {
-      "question": "What are your strengths? Write one or two instances where you have demonstrated your strengths.",
-      "answer": 
-        "Adaptability – When I had to quickly switch from one project to another with very little notice, I adjusted my schedule, learned the necessary new skills, and still delivered the work on time. This adaptability allowed me to handle unexpected changes without compromising the quality of my work.\n\nPunctuality – I take punctuality seriously in all my commitments. For instance, when I had an important deadline for a personal coding project, I made sure to allocate enough time daily, tracked my progress, and completed the project ahead of schedule. My punctuality ensured I met all my self-imposed milestones and deadlines without stress."
+      question: "What are your strengths? Write one or two instances where you have demonstrated your strengths.",
+      answer:
+        "Adaptability – When I had to quickly switch from one project to another with very little notice, I adjusted my schedule, learned the necessary new skills, and still delivered the work on time. This adaptability allowed me to handle unexpected changes without compromising the quality of my work.\n\nPunctuality – I take punctuality seriously in all my commitments. For instance, when I had an important deadline for a personal coding project, I made sure to allocate enough time daily, tracked my progress, and completed the project ahead of schedule. My punctuality ensured I met all my self-imposed milestones and deadlines without stress.",
     },
-    
+
     {
-      "question": "Write about your weaknesses. What are you doing to improve your weaknesses?",
-      "answer": "One of my main weaknesses has been my shyness and lack of confidence, especially in communication. To improve this, I’ve been actively pushing myself out of my comfort zone by engaging in more conversations and practicing public speaking.\n\nI’m also working on my communication skills by participating in group discussions and seeking constructive feedback to enhance how I express myself."
+      question: "Write about your weaknesses. What are you doing to improve your weaknesses?",
+      answer:
+        "One of my main weaknesses has been my shyness and lack of confidence, especially in communication. To improve this, I’ve been actively pushing myself out of my comfort zone by engaging in more conversations and practicing public speaking.\n\nI’m also working on my communication skills by participating in group discussions and seeking constructive feedback to enhance how I express myself.",
     },
-    
+
     {
-      "question": "What is the most difficult moment that you have faced in your life so far? What qualities helped you to overcome the moment?",
-      "answer": 
-        "Managing semester exams while juggling multiple personal commitments was a particularly difficult moment. My time management was not as effective as I had hoped, and I struggled to balance my study schedule with other responsibilities. However, my adaptability helped me overcome this challenge. I quickly adjusted my approach, re-prioritized tasks, and found new ways to manage my time better. This adaptability allowed me to adapt to the situation and still perform well in my exams while meeting my other obligations."
+      question:
+        "What is the most difficult moment that you have faced in your life so far? What qualities helped you to overcome the moment?",
+      answer:
+        "Managing semester exams while juggling multiple personal commitments was a particularly difficult moment. My time management was not as effective as I had hoped, and I struggled to balance my study schedule with other responsibilities. However, my adaptability helped me overcome this challenge. I quickly adjusted my approach, re-prioritized tasks, and found new ways to manage my time better. This adaptability allowed me to adapt to the situation and still perform well in my exams while meeting my other obligations.",
     },
-    
+
     {
-      question: "Apart from academics, what else are you interested in? Make a separate list in terms of extracurricular activities, sports and any other interests.",
+      question:
+        "Apart from academics, what else are you interested in? Make a separate list in terms of extracurricular activities, sports and any other interests.",
       answer:
         "Extracurricular Activities:\n• Web development\n• AI research\n• Competitive programming\n\nSports:\n• Chess\n• Table tennis\n\nOther Interests:\n• Deep-sea creatures and their behaviors",
     },
     {
-      question: "Write 3 leadership qualities. How many do you possess? Write an instance where you have applied those qualities.",
+      question:
+        "Write 3 leadership qualities. How many do you possess? Write an instance where you have applied those qualities.",
       answer:
         "1. Decision-making\n2. Problem-solving\n3. Team coordination\n\nI demonstrated problem-solving and team coordination when leading my team in the Attendance System project. I ensured smooth development, assigned tasks efficiently, and handled technical challenges.",
     },
-    
+
     {
       question: "What kinds of people do you enjoy working with?",
       answer:
         "People who are collaborative, open-minded, and eager to learn. I enjoy working with those who take initiative and contribute innovative ideas.",
     },
     {
-      question: "What kinds of people you don't want to work with? What would you do if they became your senior in your dream job?",
+      question:
+        "What kinds of people you don't want to work with? What would you do if they became your senior in your dream job?",
       answer:
         "I prefer not to work with uncooperative or overly negative individuals. However, if such a person became my senior, I would maintain professionalism, adapt, and focus on learning from the experience.",
     },
@@ -353,17 +370,20 @@ function ProfilingSheet() {
         "I felt that my time management was not efficient enough, especially while working on multiple projects. I have since started prioritizing tasks and using productivity tools to improve efficiency.",
     },
     {
-      question: "Rate yourself out of 5 in verbal communication. What are you doing to improve your communication skills?",
+      question:
+        "Rate yourself out of 5 in verbal communication. What are you doing to improve your communication skills?",
       answer:
         "3.5/5 – I can explain technical concepts well but aim to improve my clarity and confidence. To improve, I participate in discussions, explain concepts to peers, and engage in coding communities.",
     },
     {
-      question: "Who is your role model? What qualities of that person you would like to see in your personality and why?",
+      question:
+        "Who is your role model? What qualities of that person you would like to see in your personality and why?",
       answer:
         "Elon Musk – I admire his vision, persistence, and problem-solving skills. I want to develop the ability to think ahead, take calculated risks, and innovate in my field.",
     },
     {
-      question: "Write a few lines about your friends. Do you think they help/may help you in achieving your goals? If yes, how? If no, why do you accompany them?",
+      question:
+        "Write a few lines about your friends. Do you think they help/may help you in achieving your goals? If yes, how? If no, why do you accompany them?",
       answer:
         "My friends are motivated and hardworking, especially in tech-related fields. We often share knowledge, discuss coding problems, and work on projects together, helping each other grow.",
     },
@@ -372,8 +392,7 @@ function ProfilingSheet() {
       answer:
         "I am a second-year CSE student at Graphic Era Hill University, passionate about software development and algorithm design. My expertise lies in React, Next.js, and MongoDB, and I enjoy building projects that solve real-world problems. Apart from coding, I have an interest in deep-sea creatures and their behaviors. I am always eager to learn and improve my skills, whether in web development, AI, or competitive programming.",
     },
-  ];
-
+  ]
 
   return (
     <div className="w-full font-mono">
@@ -514,26 +533,60 @@ function MovieReview() {
             <div className="bg-slate-800/80 px-4 py-3 border-b border-slate-700">
               <div className="flex items-center">
                 <span className="text-emerald-400 mr-2 text-lg">$</span>
-                <h3 className="text-base font-bold text-slate-100">Overall Video Review</h3>
+                <h3 className="text-base font-bold text-slate-100">Overall Review Summary</h3>
               </div>
             </div>
 
             <div className="p-4">
-              <p className="text-slate-300 mb-6 text-sm">
-                Please provide a comprehensive video review of the movie, discussing all aspects covered in the
-                questions above.
-              </p>
+              <div className="bg-slate-800/60 rounded-lg p-4 mb-6 border border-slate-700">
+                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
+                  <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>
+                  Key Takeaways
+                </h4>
+                <p className="text-slate-300 text-sm mb-4">
+                  "The Pursuit of Happyness" is a powerful story about resilience, determination, and the unwavering
+                  pursuit of one's dreams despite overwhelming obstacles. Will Smith's portrayal of Chris Gardner
+                  masterfully captures the emotional journey of a man fighting against homelessness while caring for his
+                  son.
+                </p>
+                <p className="text-slate-300 text-sm">
+                  The film teaches us that persistence in the face of adversity, maintaining dignity through hardship,
+                  and never giving up on our dreams are essential qualities for success. It reminds us that sometimes
+                  the darkest moments come just before breakthrough, and that protecting our dreams from doubt—even our
+                  own—is crucial to achieving them.
+                </p>
+              </div>
 
-              <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-80 overflow-hidden group relative">
-                <video
-                  className="w-full h-full object-contain"
-                  controls
-                  preload="metadata"
-                  src="/MR4.mp4"
-                  poster="/placeholder.svg?height=400&width=600&text=Movie Review Overall"
-                >
-                  Your browser does not support the video tag.
-                </video>
+              <div className="bg-slate-800/60 rounded-lg p-4 border border-slate-700">
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="font-bold text-slate-400 text-sm flex items-center">
+                    <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>
+                    Rating
+                  </h4>
+                  <div className="flex">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <svg
+                        key={star}
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill={star <= 5 ? "#10b981" : "none"}
+                        stroke="#10b981"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="mx-0.5"
+                      >
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-sm text-slate-400 italic">
+                  "A compelling reminder that with determination and hard work, we can overcome even the most
+                  challenging circumstances."
+                </p>
               </div>
             </div>
           </div>
@@ -611,18 +664,34 @@ function PresentationSkills() {
                 </h4>
                 <div className="text-slate-300 text-sm">
                   <p className="mb-4">
-                    Our team presentation simulated a pitch to potential investors for our product, <strong>React CRM</strong> — an innovative Customer Relationship Management tool designed for modern businesses.
+                    Our team presentation simulated a pitch to potential investors for our product,{" "}
+                    <strong>React CRM</strong> — an innovative Customer Relationship Management tool designed for modern
+                    businesses.
                   </p>
 
                   <ul className="list-disc list-inside space-y-2 mb-4">
-                    <li>Our <strong>CEO</strong> introduced the product vision, mission, and the market opportunity.</li>
-                    <li>The <strong>Technical Head</strong> explained the core features, technical architecture, and advantages of using React CRM.</li>
-                    <li>The <strong>Marketing Head</strong> discussed the go-to-market strategies, target audience, and brand positioning.</li>
-                    <li>The <strong>Financial Head</strong> presented the business model, projected revenues, funding requirements, and expected ROI for the investors.</li>
+                    <li>
+                      Our <strong>CEO</strong> introduced the product vision, mission, and the market opportunity.
+                    </li>
+                    <li>
+                      The <strong>Technical Head</strong> explained the core features, technical architecture, and
+                      advantages of using React CRM.
+                    </li>
+                    <li>
+                      The <strong>Marketing Head</strong> discussed the go-to-market strategies, target audience, and
+                      brand positioning.
+                    </li>
+                    <li>
+                      The <strong>Financial Head</strong> presented the business model, projected revenues, funding
+                      requirements, and expected ROI for the investors.
+                    </li>
                   </ul>
 
                   <p>
-                    We structured our presentation to mimic a real-world investor pitch, focusing on clarity, confidence, and engagement. Visual aids were carefully designed to support each section, and we rehearsed extensively to ensure seamless transitions and answer any potential questions from the investors.
+                    We structured our presentation to mimic a real-world investor pitch, focusing on clarity,
+                    confidence, and engagement. Visual aids were carefully designed to support each section, and we
+                    rehearsed extensively to ensure seamless transitions and answer any potential questions from the
+                    investors.
                   </p>
                 </div>
               </div>
@@ -632,17 +701,11 @@ function PresentationSkills() {
                   <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
                   Team Presentation Video
                 </h4>
-                <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
-                  <video
-                    className="w-full h-full object-contain"
-                    controls
-                    preload="metadata"
-                    src="/team-presentation.mp4"
-                    poster="/placeholder.svg?height=400&width=600&text=Team Presentation Video"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+                <OptimizedVideo
+                  src="/team-presentation.mp4"
+                  poster="/placeholder.svg?height=400&width=600&text=Team Presentation Video"
+                  title="Team Presentation"
+                />
               </div>
             </div>
           </div>
@@ -651,7 +714,6 @@ function PresentationSkills() {
     </div>
   )
 }
-
 
 // Group Discussion Component
 function GroupDiscussion() {
@@ -731,7 +793,10 @@ function GroupDiscussion() {
                 <div className="text-slate-300 text-sm space-y-4">
                   <div>
                     <h5 className="text-emerald-400 mb-2 font-bold">Topic-based GD</h5>
-                    <p>Participants discuss a given topic or theme, sharing their views and perspectives. These can be further divided into:</p>
+                    <p>
+                      Participants discuss a given topic or theme, sharing their views and perspectives. These can be
+                      further divided into:
+                    </p>
                     <ul className="list-disc list-inside mt-2 ml-4">
                       <li>Factual topics (based on events, data)</li>
                       <li>Controversial topics (with opposing viewpoints)</li>
@@ -741,15 +806,24 @@ function GroupDiscussion() {
                   </div>
                   <div>
                     <h5 className="text-emerald-400 mb-2 font-bold">Role-based GD</h5>
-                    <p>Participants are assigned specific roles or perspectives to represent during the discussion, regardless of their personal views.</p>
+                    <p>
+                      Participants are assigned specific roles or perspectives to represent during the discussion,
+                      regardless of their personal views.
+                    </p>
                   </div>
                   <div>
                     <h5 className="text-emerald-400 mb-2 font-bold">Problem-solving GD</h5>
-                    <p>The group is presented with a problem or scenario and must work together to find solutions or strategies.</p>
+                    <p>
+                      The group is presented with a problem or scenario and must work together to find solutions or
+                      strategies.
+                    </p>
                   </div>
                   <div>
                     <h5 className="text-emerald-400 mb-2 font-bold">Case-based GD</h5>
-                    <p>Participants analyze a detailed case study and discuss various aspects, implications, and potential actions.</p>
+                    <p>
+                      Participants analyze a detailed case study and discuss various aspects, implications, and
+                      potential actions.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -774,13 +848,16 @@ function GroupDiscussion() {
                   <div>
                     <h5 className="text-emerald-400 mb-2 font-bold">5W1H Method</h5>
                     <p>
-                      Analyzing a topic by asking <strong>Who, What, When, Where, Why,</strong> and <strong>How</strong> questions to explore all aspects deeply and systematically.
+                      Analyzing a topic by asking <strong>Who, What, When, Where, Why,</strong> and <strong>How</strong>{" "}
+                      questions to explore all aspects deeply and systematically.
                     </p>
                   </div>
                   <div>
                     <h5 className="text-emerald-400 mb-2 font-bold">SPEEL Technique</h5>
                     <p>
-                      A method that encourages idea generation by considering: <strong>Social, Political, Economic, Environmental,</strong> and <strong>Legal</strong> dimensions of a topic.
+                      A method that encourages idea generation by considering:{" "}
+                      <strong>Social, Political, Economic, Environmental,</strong> and <strong>Legal</strong> dimensions
+                      of a topic.
                     </p>
                   </div>
                 </div>
@@ -792,17 +869,11 @@ function GroupDiscussion() {
                   <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
                   Group Discussion Video
                 </h4>
-                <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
-                  <video
-                    className="w-full h-full object-contain"
-                    controls
-                    preload="metadata"
-                    src="/gd-idea-generation.mp4"
-                    poster="/placeholder.svg?height=400&width=600&text=Group Discussion Video"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+                <OptimizedVideo
+                  src="/gd-idea-generation.mp4"
+                  poster="/placeholder.svg?height=400&width=600&text=Group Discussion Video"
+                  title="Group Discussion"
+                />
               </div>
             </div>
           </div>
