@@ -429,7 +429,7 @@ function ProfilingSheet() {
                     <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
                     My Video Response
                   </h4>
-                  <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-64 overflow-hidden group relative">
+                  <div className="aspect-w-16 aspect-h-9 bg-slate-800/60 rounded-lg border border-slate-700 flex items-center justify-center mb-4 h-96 overflow-hidden group relative">
                     <OptimizedVideo
                       src={`/Q-${index + 1}.mp4`}
                       poster={`/placeholder.svg?height=400&width=600&text=Video ${index + 1}`}
