@@ -338,7 +338,7 @@ function ProfilingSheet() {
     {
       question: "Apart from academics, what else are you interested in? Make a separate list in terms of extracurricular activities, sports and any other interests.",
       answer:
-        "Extracurricular Activities:\n• Web development\n• AI research\n• Competitive programming\n\nSports:\n• Chess\n• Table tennis\n\nOther Interests:\n• Deep-sea creatures and their behaviors",
+        "Extracurricular Activities:\n• Web development\n• AI research\n• Competitive programming\n\nSports:\n• Chess\n• Football",
     },
     {
       question:
@@ -375,11 +375,11 @@ function ProfilingSheet() {
         "3.5/5 – I can explain technical concepts well but aim to improve my clarity and confidence. To improve, I participate in discussions, explain concepts to peers, and engage in coding communities.",
     },
     {
-      question:
-        "Who is your role model? What qualities of that person you would like to see in your personality and why?",
-      answer:
-        "Elon Musk – I admire his vision, persistence, and problem-solving skills. I want to develop the ability to think ahead, take calculated risks, and innovate in my field.",
+      "question": "Who is your role model? What qualities of that person you would like to see in your personality and why?",
+      "answer": 
+        "Lionel Messi – I admire his humility, consistency, and dedication to his craft. I want to develop the ability to stay grounded, work hard continuously without losing focus, and maintain excellence over a long period, just like Messi does."
     },
+    
     {
       question:
         "Write a few lines about your friends. Do you think they help/may help you in achieving your goals? If yes, how? If no, why do you accompany them?",
