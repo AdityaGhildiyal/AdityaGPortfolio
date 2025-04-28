@@ -171,23 +171,18 @@ function SelfIntroduction() {
                 </h4>
                 <div className="text-slate-300 text-sm">
                   <p className="mb-4">
-                    Hello! I'm Aditya Ghildiyal, a second-year Computer Science and Engineering student at Graphic Era
-                    Hill University in Dehradun, Uttarakhand. I'm passionate about web development, algorithms, and
-                    creating efficient solutions to real-world problems.
+                    Hello! I'm Aditya Ghildiyal, born in Delhi, with most of my schooling completed in Delhi and Bhopal. I am currently pursuing a Bachelor of Technology (B.Tech) in Computer Science and Engineering at Graphic Era Hill University, Dehradun, Uttarakhand.
                   </p>
 
                   <p className="mb-4">
-                    My technical skills include proficiency in C, C++, Python, JavaScript, and TypeScript. I've worked
-                    on several projects including a ChatBot for my university, an ERP system, and a pathfinding
-                    visualization tool. I enjoy the challenge of optimizing code and implementing complex algorithms.
+                    I have a strong passion for web development, algorithms, and building efficient technology solutions. My technical skills include proficiency in C, C++, Python, JavaScript, and React. I enjoy solving complex problems and optimizing code for better performance.
                   </p>
 
                   <p>
-                    Beyond coding, I'm interested in AI research and competitive programming. I believe in continuous
-                    learning and am always looking to expand my knowledge in emerging technologies. My goal is to become
-                    a skilled software engineer specializing in full-stack development and artificial intelligence.
+                    Beyond technical skills, I have a deep interest in artificial intelligence research and competitive programming. I am committed to continuous learning and aspire to build a career as a software engineer specializing in full-stack development and artificial intelligence.
                   </p>
                 </div>
+
               </div>
 
               <div className="mt-6">
@@ -287,8 +282,7 @@ function ProfilingSheet() {
   const questions = [
     {
       question: "Write your career objective.",
-      answer:
-        "To become a skilled software engineer, specializing in full-stack development and artificial intelligence. I aim to create efficient, scalable applications that solve real-world problems while continuously enhancing my knowledge of data structures, algorithms, and system design.",
+      answer: "My career objective is to become a skilled software developer, keep learning new technologies, and work on projects that make a real difference.I want to keep improving my skills, grow with the company I work for, and build a successful career by giving my best to every opportunity I get..",
     },
     {
       question: "Why do you want to be an engineer? Elaborate reasons.",
@@ -298,12 +292,12 @@ function ProfilingSheet() {
     {
       question: "Write about projects or internship you have done/are doing along with the learning.",
       answer:
-        "Attendance System with QR Code\n\nTechnologies: React, Next.js, MongoDB\n\nLearned about frontend development, API integration, and database management.\n\nOnline Class Platform\n\nTechnologies: Next.js, ZEGOCLOUD (for media streaming)\n\nGained knowledge about real-time communication, authentication, and cloud-based APIs.\n\nWordle Game (Cross-Platform)\n\nTechnologies: Next.js (web), React Native (mobile)\n\nLearned about game logic implementation, UI design, and cross-platform development.",
+        "I have worked on a few interesting projects so far.First, I made a chatbot using Next.js and machine learning. Through this project, I learned how to build conversational interfaces and connect a front-end application with machine learning models. It helped me understand user interactions and how to process data intelligently.Second, I developed an online class platform with an automated attendance system. In this project, I worked on integrating real-time features and automating tasks like marking attendance using QR codes and databases. It gave me hands-on experience in backend development, frontend integration, and managing user flows.Lastly, I built a cross-platform Minesweeper game. This project helped me learn about game logic, user interface design, and making apps that work smoothly across both web and mobile platforms.Each of these projects improved my technical skills and taught me how to think practically while solving real-world problems.",
     },
     {
       question: "What would you consider a significant achievement in your life and why?",
       answer:
-        "Overcoming my shyness during the first year of college was a major achievement. I gradually built confidence by participating in group discussions, volunteering for small tasks in class, and consistently stepping out of my comfort zone. This helped me interact better with people, work effectively in teams, and express my ideas more clearly.",
+        "For me, one of my most significant achievements is overcoming my lack of confidence, shyness, and poor communication skills.Earlier, I used to find it difficult to start conversations or even speak comfortably in group situations.But over time, by consistently pushing myself out of my comfort zone, practicing speaking, and interacting with different people, I have made a lot of improvement.Now, I am able to hold conversations, initiate discussions, and express my thoughts much more clearly and confidently.",
     },
     {
       question: "Write about a failure of yours which you consider to share. What have you learned from it?",
@@ -311,20 +305,22 @@ function ProfilingSheet() {
         "For a long time, I was indisciplined about my studies, leading to poor grades. This experience taught me the importance of consistency and planning. I started following a structured schedule, set short-term goals, and focused on daily improvements, which helped me regain control over my academics.",
     },
     {
-      question: "What are your strengths? Write one or two instances where you have demonstrated your strengths.",
-      answer:
-        "Problem-Solving – Helped organize a college event when key members dropped out last minute by quickly coming up with new plans.\n\nLeadership – Coordinated a group outing by managing everyone's preferences, arranging logistics, and ensuring smooth communication among all members.",
+      "question": "What are your strengths? Write one or two instances where you have demonstrated your strengths.",
+      "answer": 
+        "Adaptability – When I had to quickly switch from one project to another with very little notice, I adjusted my schedule, learned the necessary new skills, and still delivered the work on time. This adaptability allowed me to handle unexpected changes without compromising the quality of my work.\n\nPunctuality – I take punctuality seriously in all my commitments. For instance, when I had an important deadline for a personal coding project, I made sure to allocate enough time daily, tracked my progress, and completed the project ahead of schedule. My punctuality ensured I met all my self-imposed milestones and deadlines without stress."
     },
+    
     {
-      question: "Write about your weaknesses. What are you doing to improve your weaknesses?",
-      answer:
-        "Typing Speed – Working on improving my typing accuracy and speed through daily practice.\n\nTime Management – Using task prioritization techniques and scheduling my projects efficiently.",
+      "question": "Write about your weaknesses. What are you doing to improve your weaknesses?",
+      "answer": "One of my main weaknesses has been my shyness and lack of confidence, especially in communication. To improve this, I’ve been actively pushing myself out of my comfort zone by engaging in more conversations and practicing public speaking.\n\nI’m also working on my communication skills by participating in group discussions and seeking constructive feedback to enhance how I express myself."
     },
+    
     {
-      question: "What is the most difficult moment that you have faced in your life so far? What qualities helped you to overcome the moment?",
-      answer:
-        "Preparing for semester exams while managing family responsibilities was challenging. Qualities like resilience, time management, and patience helped me handle both aspects without giving up.",
+      "question": "What is the most difficult moment that you have faced in your life so far? What qualities helped you to overcome the moment?",
+      "answer": 
+        "Managing semester exams while juggling multiple personal commitments was a particularly difficult moment. My time management was not as effective as I had hoped, and I struggled to balance my study schedule with other responsibilities. However, my adaptability helped me overcome this challenge. I quickly adjusted my approach, re-prioritized tasks, and found new ways to manage my time better. This adaptability allowed me to adapt to the situation and still perform well in my exams while meeting my other obligations."
     },
+    
     {
       question: "Apart from academics, what else are you interested in? Make a separate list in terms of extracurricular activities, sports and any other interests.",
       answer:
