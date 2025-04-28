@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowLeft, FileText, Film, Terminal, Video, Users, Brain } from "lucide-react"
-import CustomCursor from "@/components/custom-cursor"
 
 export default function PESEPage() {
   const [activeTab, setActiveTab] = useState("introduction")
@@ -40,7 +39,6 @@ export default function PESEPage() {
 
   return (
     <div className="min-h-screen bg-[#0A0E17] text-slate-100">
-      <CustomCursor />
       <header className="bg-slate-900/80 backdrop-blur-md sticky top-0 z-10 border-b border-slate-800 p-4 flex items-center">
         <Link href="/" className="flex items-center text-slate-300 hover:text-emerald-400 transition-colors">
           <ArrowLeft className="mr-2" size={20} />

@@ -5,7 +5,6 @@ import { ArrowLeft, Server, Database, Code, AlertTriangle } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState, useRef } from "react"
-import CustomCursor from "@/components/custom-cursor"
 
 export default function DemoPage() {
   const [loadingProgress, setLoadingProgress] = useState(0)
@@ -51,7 +50,6 @@ export default function DemoPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0A0E17] to-[#111927] text-slate-100 flex flex-col">
-      <CustomCursor />
       <header className="p-4 border-b border-slate-800">
         <div className="container mx-auto">
           <Link href="/" className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors">

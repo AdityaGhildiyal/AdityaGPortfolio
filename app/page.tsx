@@ -12,7 +12,6 @@ import Achievements from "@/components/achievements"
 
 import PESESection from "@/components/pese-section"
 
-import CustomCursor from "@/components/custom-cursor"
 import Navigation from "@/components/navigation"
 import ThreeDModel from "@/components/three-d-model"
 import TerminalInterface from "@/components/terminal-interface"
@@ -20,7 +19,6 @@ import TerminalInterface from "@/components/terminal-interface"
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-[#0A0E17] text-slate-100 overflow-hidden">
-      <CustomCursor />
       <ParticleBackground />
       <TerminalInterface />
       <Navigation />

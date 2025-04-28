@@ -52,7 +52,7 @@ export default function About() {
           <div className="font-mono text-slate-300 leading-relaxed">
             <p className="mb-4">
               <span className="text-emerald-400">const </span>
-              <span className="text-yellow-400">developer</span> = {"{"}
+              <span className="text-yellow-400">About_Me</span> = {"{"}
             </p>
             <p className="pl-6 mb-2">
               <span className="text-purple-400">name</span>:{" "}
@@ -76,9 +76,6 @@ export default function About() {
             <p className="pl-6 mb-2">
               <span className="text-purple-400">experience</span>:{" "}
               <span className="text-green-300">&quot;currently student&quot;</span>,
-            </p>
-            <p className="pl-6 mb-2">
-              <span className="text-purple-400">coffee_per_day</span>: <span className="text-orange-300">1</span>,
             </p>
             <p className="mb-2">{"};"}</p>
           </div>
