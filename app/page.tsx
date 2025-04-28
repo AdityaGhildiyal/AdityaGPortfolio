@@ -10,6 +10,8 @@ import Testimonials from "@/components/testimonials"
 import BlogPreview from "@/components/blog-preview"
 import Achievements from "@/components/achievements"
 
+import PESESection from "@/components/pese-section"
+
 import CustomCursor from "@/components/custom-cursor"
 import Navigation from "@/components/navigation"
 import ThreeDModel from "@/components/three-d-model"
@@ -31,6 +33,7 @@ export default function Home() {
         </div>
         <ExperienceTimeline />
         <Projects />
+        <PESESection />
         <Contact />
       </div>
     </main>
