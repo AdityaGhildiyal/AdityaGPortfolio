@@ -194,6 +194,7 @@ function SelfIntroduction() {
                   <video
                     className="w-full h-full object-contain"
                     controls
+                    preload="metadata"
                     src="/self-introduction.mp4"
                     poster="/placeholder.svg?height=400&width=600&text=Self Introduction Video"
                   >
@@ -262,6 +263,7 @@ function SelfIntroduction() {
                   <video
                     className="w-full h-full object-contain"
                     controls
+                    preload="metadata"
                     src="/brain-activity.mp4"
                     poster="/placeholder.svg?height=400&width=600&text=Brain Activity Video"
                   >
@@ -415,6 +417,7 @@ function ProfilingSheet() {
                     <video
                       className="w-full h-full object-contain"
                       controls
+                      preload="metadata"
                       src={`/Q-${index + 1}.mp4`}
                       poster={`/placeholder.svg?height=400&width=600&text=Video ${index + 1}`}
                     >
@@ -527,6 +530,7 @@ function MovieReview() {
                 <video
                   className="w-full h-full object-contain"
                   controls
+                  preload="metadata"
                   src="/MR4.mp4"
                   poster="/placeholder.svg?height=400&width=600&text=Movie Review Overall"
                 >
@@ -634,6 +638,7 @@ function PresentationSkills() {
                   <video
                     className="w-full h-full object-contain"
                     controls
+                    preload="metadata"
                     src="/team-presentation.mp4"
                     poster="/placeholder.svg?height=400&width=600&text=Team Presentation Video"
                   >
@@ -793,6 +798,7 @@ function GroupDiscussion() {
                   <video
                     className="w-full h-full object-contain"
                     controls
+                    preload="metadata"
                     src="/gd-idea-generation.mp4"
                     poster="/placeholder.svg?height=400&width=600&text=Group Discussion Video"
                   >
