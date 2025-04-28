@@ -194,7 +194,7 @@ function SelfIntroduction() {
                   <video
                     className="w-full h-full object-contain"
                     controls
-                    src="/self-intro.mp4"
+                    src="/self-introduction.mp4"
                     poster="/placeholder.svg?height=400&width=600&text=Self Introduction Video"
                   >
                     Your browser does not support the video tag.
@@ -415,7 +415,7 @@ function ProfilingSheet() {
                     <video
                       className="w-full h-full object-contain"
                       controls
-                      src={`/Q${index + 1}.mp4`}
+                      src={`/Q-${index + 1}.mp4`}
                       poster={`/placeholder.svg?height=400&width=600&text=Video ${index + 1}`}
                     >
                       Your browser does not support the video tag.
