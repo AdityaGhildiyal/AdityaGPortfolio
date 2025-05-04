@@ -201,89 +201,9 @@ function SelfIntroduction() {
                 />
               </div>
             </div>
-          </div>
-
-          <div className="bg-slate-900/50 rounded-lg border border-slate-800 backdrop-blur-sm overflow-hidden">
-            <div className="bg-slate-800/80 px-4 py-3 border-b border-slate-700">
-              <div className="flex items-center">
-                <span className="text-emerald-400 mr-2 text-lg">$</span>
-                <h3 className="text-base font-bold text-slate-100">Left Brain vs Right Brain</h3>
-              </div>
-            </div>
-
-            <div className="p-4">
-              <div className="bg-slate-800/60 rounded-lg p-4 mb-6 border border-slate-700">
-                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
-                  <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>
-                  Understanding Brain Hemispheres
-                </h4>
-                <div className="text-slate-300 text-sm">
-                  <p className="mb-4">The human brain has two hemispheres, each with specialized functions:</p>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <div className="border border-slate-700 p-4 rounded-lg">
-                      <h5 className="text-emerald-400 mb-2 font-bold">Left Brain</h5>
-                      <ul className="list-disc list-inside space-y-1 text-slate-300">
-                        <li>Logical thinking</li>
-                        <li>Analytical reasoning</li>
-                        <li>Mathematical abilities</li>
-                        <li>Language processing</li>
-                        <li>Sequential processing</li>
-                      </ul>
-                    </div>
-
-                    <div className="border border-slate-700 p-4 rounded-lg">
-                      <h5 className="text-emerald-400 mb-2 font-bold">Right Brain</h5>
-                      <ul className="list-disc list-inside space-y-1 text-slate-300">
-                        <li>Creative thinking</li>
-                        <li>Intuition</li>
-                        <li>Visual-spatial abilities</li>
-                        <li>Artistic expression</li>
-                        <li>Holistic processing</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <p>
-                    Through various activities and assessments, I've discovered that I have a balanced brain profile
-                    with a slight preference for left-brain activities, which explains my aptitude for programming and
-                    problem-solving while still maintaining creative abilities.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <h4 className="font-bold mb-3 text-slate-400 text-sm flex items-center">
-                  <span className="inline-block w-2 h-2 rounded-full bg-purple-400 mr-2"></span>
-                  Brain Activity Summary
-                </h4>
-                <div className="bg-slate-800/60 rounded-lg p-4 border border-slate-700">
-                  <p className="text-slate-300 text-sm">
-                    Through various activities and assessments, I've discovered that I have a balanced brain profile
-                    with a slight preference for left-brain activities. This explains my aptitude for programming and
-                    problem-solving while still maintaining creative abilities for design and innovative thinking.
-                  </p>
-                  <div className="mt-4 flex justify-center">
-                    <div className="bg-slate-900/80 rounded-lg p-4 border border-slate-700 max-w-md">
-                      <div className="flex justify-between items-center mb-3">
-                        <span className="text-emerald-400 font-mono">Left Brain</span>
-                        <span className="text-purple-400 font-mono">Right Brain</span>
-                      </div>
-                      <div className="h-4 bg-slate-700 rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-to-r from-emerald-500 to-purple-500"
-                          style={{ width: "55%" }}
-                        ></div>
-                      </div>
-                      <div className="mt-2 text-xs text-center text-slate-400">55% Left Brain / 45% Right Brain</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+    </div>
     </div>
   )
 }
